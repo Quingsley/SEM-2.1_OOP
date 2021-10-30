@@ -15,7 +15,7 @@ integer :: integer(int m,int n)
 {
 	x=m;
 	y=n;
-   //x=x+5;
+  // x=x+5;
 	cout<<"\nx = "<<x<<endl;
 	cout<<"\ny = "<<y<<endl;
 }

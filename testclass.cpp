@@ -1,50 +1,56 @@
 //UNIQUE NUMBERS
 #include <iostream>
 using namespace std;
+
 class Unique
 {
-	private:	
-		int n,count=0,i,unique[5];
+private:
+	int num, count, i, unique[5];
 
-	public:
-		void entry_of_numbers();
-		void display_uniquenumbers();
+public:
+	Unique();
+	void display_Unique();
+	void entry_of_numbers();
 };
-void Unique :: entry_of_numbers()
+void Unique::entry_of_numbers()
 {
-	while(count<5)
-	 {
-		 cout << "Enter a value: " << endl;
-         cin >> n;
-        for(i=0;i<count;i++)
-         {
-            if(n==unique[i]) // Checks if the number is already in the array
-             {
-                cout << "Number already exist!\n";
-                break;
-             }
-         }
-        if(i==count) //number not in array
-        	{
-          	  unique[count] = n;
-              count++;
-        	}
-	 }
+	cout << "Enter a value: " << endl;
+	cin >> num;
 }
-void Unique :: display_uniquenumbers()
+Unique::Unique()
 {
-	 cout << "The unique numbers are: " << endl;
-     for(int j=0;j<5;j++)
-    	{
-        	cout << unique[j] << endl;
-        }
-
+	count = 0;
+	while (count < 5)
+	{
+		entry_of_numbers();
+		for (i = 0; i < count; i++)
+		{
+			if (num == unique[i])
+			{
+				//checks if number is already in array
+				cout << "Number already exists" << endl;
+				break;
+			}
+		}
+		//place numbers in array
+		if (i == count)
+		{
+			unique[count] = num;
+			count++;
+		}
+	}
+}
+void Unique::display_Unique()
+{
+	cout << "The unique numbers are: " << endl;
+	for (int j = 0; j < 5; j++)
+	{
+		cout << unique[j] << endl;
+	}
 }
 int main()
 {
-	Unique num;
-	num.entry_of_numbers();
-	num.display_uniquenumbers();
+	Unique number;
+	number.display_Unique();
 	return 0;
 }
-
